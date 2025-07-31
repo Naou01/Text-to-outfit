@@ -36,6 +36,26 @@
   </style>
   </head>
 <body>
+  <body>
+  <h1>Hey girl, welcome to the outfit generator 💅</h1>
+  <p id="outfit">Click below to slay.</p>
+  <button onclick="generateOutfit()">Generate Outfit</button>
+
+  <script>
+    const outfits = [
+      "Denim jacket, crop top, high-waisted jeans 💁",
+      "Blazer, tank top, wide-leg pants 🔥",
+      "Oversized hoodie, biker shorts, sneakers 🧢",
+      "Satin dress, heels, bold red lips 💋",
+      "Leather jacket, band tee, ripped jeans 😈"
+    ];
+
+    function generateOutfit() {
+      const random = Math.floor(Math.random() * outfits.length);
+      document.getElementById("outfit").textContent = outfits[random];
+    }
+  </script>
+</body>
   <h1>Hey Girl, Welcome to the Outfit Generator 👠✨</h1>
   <p>This is where the glow-up starts.</p>
 </body>
