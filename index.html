@@ -47,23 +47,7 @@
 <button onclick="addOutfit()">Add</button>
 <div id="outfitList"></div>
   <script>
-    <script>
-  function generateOutfit() {
-    const input = document.getElementById("outfitInput").value.toLowerCase().trim();
-    let imagePath = "";
-    if (input.includes("red dress")) {
-      imagePath = "images/red-dress.jpg";
-    } else if (input.includes("white blazer")) {
-      imagePath = "images/white-blazer.jpg";
-    } else {
-      imagePath = "images/default.jpg"; // fallback slay pic
-    }
-    document.getElementById("outfitResult").innerHTML = `
-      <p>Here’s your slay for the day, babe 💋:</p>
-      <img src="${imagePath}" alt="Outfit" width="200">
-    `;
-  }
-</script>
+    
     }
     const outfits = [
       "Denim jacket, crop top, high-waisted jeans 💁",
@@ -84,6 +68,23 @@
   item.textContent = outfit;
   list.appendChild(item);
 }
+    <script>
+  function generateOutfit() {
+    const input = document.getElementById("outfitInput").value.toLowerCase().trim();
+    let imagePath = "";
+    if (input.includes("red dress")) {
+      imagePath = "images/red-dress.jpg";
+    } else if (input.includes("white blazer")) {
+      imagePath = "images/white-blazer.jpg";
+    } else {
+      imagePath = "images/default.jpg"; // fallback slay pic
+    }
+    document.getElementById("outfitResult").innerHTML = `
+      <p>Here’s your slay for the day, babe 💋:</p>
+      <img src="${imagePath}" alt="Outfit" width="200">
+    `;
+  }
+    </script>
 </body>
   <h1>Hey Girl, Welcome to the Outfit Generator 👠✨</h1>
   <p>This is where the glow-up starts.</p>
