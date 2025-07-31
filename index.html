@@ -40,8 +40,17 @@
   <h1>Hey girl, welcome to the outfit generator 💅</h1>
   <p id="outfit">Click below to slay.</p>
   <button onclick="generateOutfit()">Generate Outfit</button>
-
+<input type="text" id="outfitInput" placeholder="Type your outfit here">
+<button onclick="addOutfit()">Add</button>
+<div id="outfitList"></div>
   <script>
+    function addOutfit() {
+  const outfit = document.getElementById('outfitInput').value;
+  const list = document.getElementById('outfitList');
+  const item = document.createElement('p');
+  item.textContent = outfit;
+  list.appendChild(item);
+    }
     const outfits = [
       "Denim jacket, crop top, high-waisted jeans 💁",
       "Blazer, tank top, wide-leg pants 🔥",
