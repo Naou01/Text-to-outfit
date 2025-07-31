@@ -1,0 +1,29 @@
+import { useState } from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { Input } from "@/components/ui/input";
+
+const outfitIdeas = (items) => { const tops = items.filter(i => /top|blouse|shirt|crop/i.test(i)); const bottoms = items.filter(i => /jeans|pants|trousers|skirt|shorts/i.test(i)); const outerwear = items.filter(i => /jacket|coat|blazer|cardigan/i.test(i)); const shoes = items.filter(i => /sneakers|heels|boots|sandals/i.test(i)); const accessories = items.filter(i => /earrings|bag|watch|hat|scarf/i.test(i));
+
+let ideas = []; tops.forEach(top => { bottoms.forEach(bottom => { shoes.forEach(shoe => { const outer = outerwear[Math.floor(Math.random() * outerwear.length)] || ""; const acc = accessories[Math.floor(Math.random() * accessories.length)] || ""; ideas.push(`${top}, ${bottom}, ${shoe}${outer ? ", " + outer : ""}${acc ? ", " + acc : ""}`);
+return ideas.slice(0, 10); // limit to 10 suggestions };
+
+export default function ClosetStylist() { const [input, setInput] = useState(""); const [suggestions, setSuggestions] = useState([]);
+
+const handleGenerate = () => { const items = input.split(",").map(i => i.trim().toLowerCase()).filter(Boolean); setSuggestions(outfitIdeas(items)); };
+
+return ( <div className="p-6 max-w-2xl mx-auto"> <h1 className="text-3xl font-bold mb-4">Text-to-Outfit Stylist</h1> <Input placeholder="Type your clothes here (e.g., white blouse, black jeans, sneakers)" value={input} onChange={(e) => setInput(e.target.value)} className="mb-4" /> <Button onClick={handleGenerate} className="mb-6">Generate Outfits</Button>
+
+{suggestions.length > 0 && (
+    <div className="space-y-4">
+      {suggestions.map((s, idx) => (
+        <Card key={idx}>
+          <CardContent className="p-4 text-lg">{s}</CardContent>
+        </Card>
+      ))}
+    </div>
+  )}
+</div>
+
+); }
+
+Commit changes
+[✓] Commit directly to the main branch
+Commit message: "Add ClosetStylist component" 
