@@ -44,12 +44,6 @@
 <button onclick="addOutfit()">Add</button>
 <div id="outfitList"></div>
   <script>
-    function addOutfit() {
-  const outfit = document.getElementById('outfitInput').value;
-  const list = document.getElementById('outfitList');
-  const item = document.createElement('p');
-  item.textContent = outfit;
-  list.appendChild(item);
     }
     const outfits = [
       "Denim jacket, crop top, high-waisted jeans 💁",
@@ -64,6 +58,13 @@
       document.getElementById("outfit").textContent = outfits[random];
     }
   </script>
+    function addOutfit() {
+  const outfit = document.getElementById('outfitInput').value;
+  const list = document.getElementById('outfitList');
+  const item = document.createElement('p');
+  item.textContent = outfit;
+  list.appendChild(item);
+}
 </body>
   <h1>Hey Girl, Welcome to the Outfit Generator 👠✨</h1>
   <p>This is where the glow-up starts.</p>
