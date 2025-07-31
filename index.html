@@ -36,6 +36,10 @@
   </style>
   </head>
 <body>
+  <input type="text" id="outfitInput" placeholder="Type 'red dress'">
+<button onclick="generateOutfit()">Generate Outfit</button>
+
+<div id="outfitResult"></div>
   <body>
   <h1>Hey girl, welcome to the outfit generator 💅</h1>
   <p id="outfit">Click below to slay.</p>
@@ -44,6 +48,26 @@
 <button onclick="addOutfit()">Add</button>
 <div id="outfitList"></div>
   <script>
+    <script>
+  function generateOutfit() {
+    const input = document.getElementById("outfitInput").value.toLowerCase().trim();
+    
+    let imagePath = "";
+    
+    if (input.includes("red dress")) {
+      imagePath = "images/red-dress.jpg";
+    } else if (input.includes("white blazer")) {
+      imagePath = "images/white-blazer.jpg";
+    } else {
+      imagePath = "images/default.jpg"; // fallback slay pic
+    }
+
+    document.getElementById("outfitResult").innerHTML = `
+      <p>Here’s your slay for the day, babe 💋:</p>
+      <img src="${imagePath}" alt="Outfit" width="200">
+    `;
+  }
+</script>
     }
     const outfits = [
       "Denim jacket, crop top, high-waisted jeans 💁",
